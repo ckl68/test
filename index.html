@@ -1,15 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Product</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product X | Daily wellness made easy</title>
+<meta name="description" content="Product X supplement. Replace this with your own one-line description.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2E1B2F;--plum:#4A2748;--sun:#F2C230;--blush:#F8ECE6;--paper:#FFFDF9;--mute:#6E5F6E;--line:#E7DAD2;--ok:#2F7D5B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,6vw,3.8rem)}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);text-align:center}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+img{max-width:100%;display:block}
+section{padding:64px 20px}
+.wrap{max-width:1040px;margin:auto}
+.narrow{max-width:680px;margin:auto}
+.sub{text-align:center;color:var(--mute);max-width:620px;margin:0 auto 36px}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);font-weight:700;padding:16px 34px;border-radius:999px;text-decoration:none;font-size:1.05rem;border:0;cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+.ph{background:repeating-linear-gradient(45deg,#f1e6df,#f1e6df 10px,#f8efe9 10px,#f8efe9 20px);border:2px dashed #cdb8ad;border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:.9rem;text-align:center;padding:12px;min-height:220px}
+.bar{background:var(--plum);color:#fff;text-align:center;padding:9px 12px;font-size:.9rem}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:20}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:1.5rem;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+nav a{margin-left:22px;color:var(--ink);text-decoration:none;font-weight:500}
+.hero{background:var(--blush);padding:56px 20px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.stars{color:#D99A00;font-weight:700;margin-bottom:12px}
+.hero p.lead{font-size:1.2rem;color:var(--mute)}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:.92rem;color:var(--mute)}
+.founder .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.founder h2{text-align:left}
+.list{padding:0;list-style:none}
+.list li{padding-left:28px;position:relative;margin-bottom:8px}
+.list li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.card .who{font-weight:700;margin-bottom:2px}
+.card small{color:var(--mute)}
+.stats{background:var(--plum);color:#fff;text-align:center}
+.stats .grid3 h3{font-size:2.6rem;color:var(--sun);margin:0}
+details{border-bottom:1px solid var(--line);padding:16px 4px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:1.4rem;line-height:1}
+details[open] summary:after{content:"−"}
+details p,details ul{margin-top:12px;color:var(--mute)}
+.fix{background:var(--blush);border-radius:12px;padding:14px 18px;margin-top:12px}
+.tried{background:var(--blush)}
+.tried .card{background:#fff}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.timeline .card{border-top:6px solid var(--sun)}
+.ing{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ing .card{text-align:center;padding:18px}
+.ing .card b{display:block;font-family:Fraunces,serif;font-size:1.05rem}
+.ing .card span{font-size:.9rem;color:var(--mute)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+th,td{padding:14px 16px;text-align:center;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{background:var(--plum);color:#fff}
+.yes{color:var(--ok);font-weight:700}.no{color:#B0453B;font-weight:700}
+.scroll{overflow-x:auto}
+.price{background:var(--blush);text-align:center}
+.price .box{background:#fff;border:2px solid var(--plum);border-radius:24px;max-width:520px;margin:auto;padding:34px 26px}
+.price .big{font-family:Fraunces,serif;font-size:3.2rem;font-weight:700}
+.price .big s{font-size:1.4rem;color:var(--mute);font-weight:400;margin-right:8px}
+footer{background:var(--ink);color:#e9dfe9;padding:44px 20px;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer a{color:#e9dfe9;display:block;margin-bottom:6px}
+.note{font-size:.8rem;color:var(--mute);text-align:center;margin-top:18px}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px;text-align:center;z-index:30;display:none}
+@media(max-width:760px){
+ .hero .wrap,.founder .wrap,footer .wrap{grid-template-columns:1fr}
+ .grid3,.timeline{grid-template-columns:1fr}
+ .ing{grid-template-columns:repeat(2,1fr)}
+ nav{display:none}
+ section{padding:48px 18px}
+ .sticky{display:block}
+ body{padding-bottom:70px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
-<body style="font-family:sans-serif;max-width:600px;margin:auto;padding:20px">
-  <h1>Product Name</h1>
-  <p>One or two lines on why people need this.</p>
-  <h2>RM49</h2>
-  <a href="https://wa.me/60123456789?text=Hi, I want to order Product Name">
-    <button style="padding:14px 24px;font-size:18px">Order via WhatsApp</button>
-  </a>
+<body>
+
+<!-- ========= EDIT THESE PLACEHOLDERS: search for text in [square brackets] ========= -->
+
+<div class="bar">[Launch offer: free delivery on all orders this week]</div>
+
+<header>
+  <a class="logo" href="#">PRODUCT X</a>
+  <nav><a href="#ingredients">Ingredients</a><a href="#faq">FAQ</a><a href="#buy">Shop</a><a class="order" href="#">Contact</a></nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="stars">★★★★★ [Your real rating or customer count]</div>
+      <h1>[Your main promise in one line]</h1>
+      <p class="lead">[Number] ingredients. Each one working together. [One sentence on what the product does for the customer.]</p>
+      <a class="btn order" href="#">Shop now</a>
+      <div class="trust"><span>✓ Quality tested</span><span>✓ Free delivery</span><span>✓ Easy returns</span></div>
+    </div>
+    <div class="ph" style="min-height:360px">[Hero photo of Product X]</div>
+  </div>
+</div>
+
+<!-- FOUNDER STORY -->
+<section class="founder">
+  <div class="wrap">
+    <div>
+      <h2>Hey, I’m [Name], founder of Product X</h2>
+      <p>[Tell your story in 3 to 4 short lines: the problem you had, why you made this, and what is different about it.]</p>
+      <p><b>[One-line promise, e.g. no capsules, no hassle.]</b></p>
+      <ul class="list">
+        <li>[Who it is for #1]</li>
+        <li>[Who it is for #2]</li>
+        <li>[Who it is for #3]</li>
+      </ul>
+    </div>
+    <div class="ph" style="min-height:320px">[Founder photo]</div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section style="background:var(--blush)">
+  <div class="wrap">
+    <h2>What customers say</h2>
+    <p class="sub">Only publish real reviews from real buyers. Collect them from your first customers and paste them here.</p>
+    <div class="grid3">
+      <div class="card"><div class="stars">★★★★★</div><p>“[Real customer review #1]”</p><div class="who">[First name, initial]</div><small>Verified buyer</small></div>
+      <div class="card"><div class="stars">★★★★★</div><p>“[Real customer review #2]”</p><div class="who">[First name, initial]</div><small>Verified buyer</small></div>
+      <div class="card"><div class="stars">★★★★★</div><p>“[Real customer review #3]”</p><div class="who">[First name, initial]</div><small>Verified buyer</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="stats">
+  <div class="wrap grid3">
+    <div><h3>[4.8★]</h3><p>[Rating, only if real]</p></div>
+    <div><h3>[500+]</h3><p>[Customers, only if real]</p></div>
+    <div><h3>[7 days]</h3><p>[Typical time to notice, only if you have data]</p></div>
+  </div>
+</section>
+
+<!-- PROBLEMS & FIXES (accordion) -->
+<section>
+  <div class="narrow">
+    <h2>The problem, and how Product X helps</h2>
+    <p class="sub">[One line introducing the problems your customer faces.]</p>
+    <details open><summary>[Problem 1]</summary>
+      <p><b>Why it happens:</b> [Plain-language explanation.]</p>
+      <div class="fix"><b>How Product X helps:</b><ul class="list"><li>[Ingredient A: what it does]</li><li>[Ingredient B: what it does]</li></ul></div>
+    </details>
+    <details><summary>[Problem 2]</summary>
+      <p><b>Why it happens:</b> [Plain-language explanation.]</p>
+      <div class="fix"><b>How Product X helps:</b><ul class="list"><li>[Ingredient C: what it does]</li></ul></div>
+    </details>
+    <details><summary>[Problem 3]</summary>
+      <p><b>Why it happens:</b> [Plain-language explanation.]</p>
+      <div class="fix"><b>How Product X helps:</b><ul class="list"><li>[Ingredient D: what it does]</li></ul></div>
+    </details>
+  </div>
+</section>
+
+<!-- WHAT YOU TRIED -->
+<section class="tried">
+  <div class="wrap">
+    <h2>You’re not here because you haven’t tried. You’re here because nothing worked.</h2>
+    <div class="grid3" style="margin-top:30px">
+      <div class="card"><h3>Attempt 1</h3><p>[What most people try first, and why it falls short.]</p></div>
+      <div class="card"><h3>Attempt 2</h3><p>[The next common fix, and its limit.]</p></div>
+      <div class="card"><h3>Attempt 3</h3><p>[Single-ingredient supplements and why they miss the full picture.]</p></div>
+    </div>
+    <p style="text-align:center;margin-top:30px"><b>Then you found Product X.</b></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <h2>[Your key difference, e.g. “Why Product X works”]</h2>
+    <p class="sub">[Two sentences explaining your formula or method in simple words.]</p>
+    <div class="grid3">
+      <div class="card"><h3>[Part 1]</h3><p>[What it does]</p></div>
+      <div class="card"><h3>[Part 2]</h3><p>[What it does]</p></div>
+      <div class="card" style="border-color:var(--plum)"><h3>[Together]</h3><p>[Why combining them is better]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="background:var(--blush)">
+  <div class="wrap">
+    <h2>What daily use looks like</h2>
+    <p class="sub">[Only describe results you can support. Use “may help” wording where unsure.]</p>
+    <div class="timeline">
+      <div class="card"><h3>Week 1</h3><p>[What the customer may notice]</p></div>
+      <div class="card"><h3>Week 2</h3><p>[What the customer may notice]</p></div>
+      <div class="card"><h3>Week 3 to 4</h3><p>[What the customer may notice]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section id="ingredients">
+  <div class="wrap">
+    <h2>Key ingredients</h2>
+    <p class="sub">[Copy the exact amounts from your supplier’s label.]</p>
+    <div class="ing">
+      <div class="card"><b>[Ingredient 1]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 2]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 3]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 4]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 5]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 6]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 7]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+      <div class="card"><b>[Ingredient 8]</b><span>[amount per serving]</span><p style="margin-top:8px;font-size:.9rem">[Benefit]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:var(--blush)">
+  <div class="wrap">
+    <h2>Your new all-in-one</h2>
+    <p class="sub">[One line comparing Product X to buying separate products.]</p>
+    <div class="scroll"><table>
+      <tr><th>What you get</th><th>Product X</th><th>Others</th></tr>
+      <tr><td>[Feature 1]</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>[Feature 2]</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>[Feature 3]</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>[Feature 4]</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      <tr><td>[Feature 5]</td><td class="yes">✓</td><td class="no">✕</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- PRICE / BUY -->
+<section class="price" id="buy">
+  <div class="box">
+    <h2>[Product X: pack name]</h2>
+    <div class="big"><s>RM[old price]</s>RM[price]</div>
+    <ul class="list" style="text-align:left;max-width:360px;margin:18px auto">
+      <li>[Benefit or inclusion 1]</li>
+      <li>[Benefit or inclusion 2]</li>
+      <li>[Servings per day and pack size]</li>
+    </ul>
+    <a class="btn order" href="#">Order via WhatsApp</a>
+    <p class="note">[Refund or guarantee policy: state only what you will honour.]</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="narrow">
+    <h2>Frequently asked questions</h2>
+    <details><summary>How long until I see results?</summary><p>[Honest answer. Results vary between people.]</p></details>
+    <details><summary>Is it safe to take with my medication?</summary><p>[Advise customers to check with their doctor or pharmacist.]</p></details>
+    <details><summary>How do I take it?</summary><p>[Dosage and timing from your label.]</p></details>
+    <details><summary>How is this different from other brands?</summary><p>[Your answer.]</p></details>
+    <details><summary>What if it doesn’t work for me?</summary><p>[Your refund policy.]</p></details>
+    <details><summary>How long does delivery take?</summary><p>[Your delivery times.]</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><div class="logo" style="color:#fff">PRODUCT X</div><p style="margin-top:10px">[Company name, SSM number, address, email]</p></div>
+    <div><b>Company</b><br><a href="#">Contact</a><a href="#">About us</a></div>
+    <div><b>Support</b><br><a href="#">Refund policy</a><a href="#">Shipping policy</a><a href="#">Privacy policy</a></div>
+  </div>
+  <p class="note" style="color:#bfaebf">These statements have not been evaluated as a replacement for medical advice. [Add your KKM/NPRA notification number and required disclaimer here.]</p>
+  <p class="note" style="color:#bfaebf">© 2026 Product X</p>
+</footer>
+
+<div class="sticky"><a class="btn order" href="#" style="padding:12px 28px">Order via WhatsApp</a></div>
+
+<script>
+/* Put YOUR WhatsApp number here: country code, no + or spaces */
+var WA = "60123456789";
+var MSG = "Hi, I want to order Product X";
+document.querySelectorAll("a.order").forEach(function(a){
+  a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(MSG);
+});
+</script>
 </body>
 </html>
